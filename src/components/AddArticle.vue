@@ -1,14 +1,22 @@
 <template>
-  <form @submit.prevent="postArticle">
-    <table>
-      <th>タイトル</th>
-      <td>
-        <input type="text" v-model="title">
-      </td>
-      <th>内容</th>
-      <td>
-        <input type="text" v-model="article">
-      </td>
+  <form @submit.prevent="postArticle" class="test">
+    <table border="1">
+      <tr>
+        <th>タイトル</th>
+        <td>
+          <input class="input-long" type="text" v-model="title">
+        </td>
+      </tr>
+      <tr>
+        <th>内容</th>
+        <td>
+          <textarea type="textarea"
+            v-model="article"
+            rows="10"
+            cols="60"  
+          />
+        </td>
+      </tr>
       <button type="submit">投稿</button>
     </table>
   </form>
@@ -31,3 +39,25 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+form {
+  display: block;
+}
+table {
+  justify-content: center;
+}
+
+table tr, th, td {
+  padding: 5px;
+}
+
+.input-long {
+  width: 420px;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+}
+</style>
